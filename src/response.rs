@@ -17,7 +17,7 @@ mod test {
     fn empty() {
         let input = "";
         let expected: Vec<crate::Argument> = vec![];
-        let actual = parse_response(input);
+        let actual = parse_response(input, crate::PREFIX);
         assert_eq!(expected, actual);
     }
 
@@ -35,7 +35,7 @@ sun";
             crate::Argument::PassThrough("walker texas".into()),
             crate::Argument::PassThrough("sun".into()),
         ];
-        let actual = parse_response(input);
+        let actual = parse_response(input, crate::PREFIX);
         assert_eq!(expected, actual);
     }
 }
