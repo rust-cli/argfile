@@ -2,7 +2,7 @@
 pub fn parse_fromfile(content: &str, prefix: char) -> Vec<crate::Argument> {
     content
         .lines()
-        .map(move |l| crate::Argument::parse(l, prefix))
+        .map(move |l| crate::Argument::parse_ref(l, prefix))
         .collect()
 }
 
