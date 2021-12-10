@@ -18,6 +18,18 @@
 //!     argfile::PREFIX,
 //! ).unwrap();
 //! ```
+//!
+//! To integrate this with [wild](docs.rs/wild) and [clap](docs.rs/clap)
+//! ```rust,no_run
+//! let args = wild::args_os();
+//! let args = argfile::expand_args_from(
+//!     args,
+//!     argfile::parse_fromfile,
+//!     argfile::PREFIX,
+//! ).unwrap();
+//! let matches = clap::App::new("your_app")
+//!     .get_matches_from(args);
+//! ```
 
 #![cfg_attr(feature = "docsrs", feature(doc_auto_cfg))]
 
