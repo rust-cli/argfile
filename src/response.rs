@@ -1,4 +1,6 @@
 /// Parse a Microsoft response file
+///
+/// See [Microsoft response files](https://docs.microsoft.com/en-us/cpp/build/reference/at-specify-a-compiler-response-file?view=msvc-170).
 pub fn parse_response(content: &str, _prefix: char) -> Vec<crate::Argument> {
     shlex::split(content)
         .unwrap_or_default()

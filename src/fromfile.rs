@@ -1,4 +1,12 @@
 /// Parse a Python fromfile
+///
+/// fromfile's are
+/// - One line equates to one argument
+///   - No escaping is needed for spaces
+///   - `--foo bar` would need to be `--foo\nbar` or `--foo=bar`
+/// - Recursive
+///
+/// See [Python fromfile](https://docs.python.org/3/library/argparse.html#fromfile-prefix-chars).
 pub fn parse_fromfile(content: &str, prefix: char) -> Vec<crate::Argument> {
     content
         .lines()
