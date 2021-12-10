@@ -19,6 +19,8 @@
 //! ).unwrap();
 //! ```
 
+#![cfg_attr(feature = "docsrs", feature(doc_auto_cfg))]
+
 mod argument;
 mod fromfile;
 #[cfg(feature = "response")]
