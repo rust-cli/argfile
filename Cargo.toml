@@ -1,6 +1,6 @@
 [package]
 name = "argfile"
-version = "0.1.0"
+version = "0.1.1"
 description = "Load additional CLI args from file"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/rust-cli/argfile.git"

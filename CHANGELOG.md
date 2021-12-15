@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+## [0.1.1] - 2021-12-15
+
 ### Fixes
 
 - Adjust docs.rs to show feature flags
@@ -16,5 +18,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 Initial release
 
 <!-- next-url -->
-[Unreleased]: https://github.com/rust-cli/argfile/compare/0.1.0...HEAD
+[Unreleased]: https://github.com/rust-cli/argfile/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/rust-cli/argfile/compare/0.1.0...v0.1.1
 [0.1.0]: https://github.com/rust-cli/argfile/compare/babf658...0.1.0
