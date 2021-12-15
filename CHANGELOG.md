@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+### Fixes
+
+- Adjust docs.rs to show feature flags
+
 ## 0.1.0 - 2021-12-10
 
 Initial release
