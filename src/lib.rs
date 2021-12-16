@@ -31,7 +31,7 @@
 //!     .get_matches_from(args);
 //! ```
 
-#![cfg_attr(feature = "docsrs", feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 
 mod argument;
 mod fromfile;
