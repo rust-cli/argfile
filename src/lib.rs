@@ -7,8 +7,8 @@
 //! - [Microsoft response files](https://docs.microsoft.com/en-us/cpp/build/reference/at-specify-a-compiler-response-file?view=msvc-170)
 //! - [Python fromfile](https://docs.python.org/3/library/argparse.html#fromfile-prefix-chars)
 //!
-//! This is meant to work with any CLI parser, like [clap](docs.rs/clap), by pre-processing the
-//! arguments, like [wild](docs.rs/wild).
+//! This is meant to work with any CLI parser, like [clap](https://docs.rs/clap), by pre-processing the
+//! arguments, like [wild](https://docs.rs/wild).
 //!
 //! ## Examples
 //!
@@ -19,7 +19,7 @@
 //! ).unwrap();
 //! ```
 //!
-//! To integrate this with [wild](docs.rs/wild) and [clap](docs.rs/clap)
+//! To integrate this with [wild](https://docs.rs/wild) and [clap](https://docs.rs/clap)
 //! ```rust,no_run
 //! let args = wild::args_os();
 //! let args = argfile::expand_args_from(

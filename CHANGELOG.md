@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+### Fixes
+
+- Links to clap and wild in documentation
+
 ## [0.1.3] - 2021-12-16
 
 ### Fixes
