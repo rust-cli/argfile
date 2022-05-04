@@ -2,7 +2,7 @@
 
 repository:
   description: Load additional CLI args from file
-  homepage: docs.rs/argfile
+  homepage: https://docs.rs/argfile
   topics: rust cli clap
   has_issues: true
   has_projects: false
