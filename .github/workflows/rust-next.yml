@@ -1,7 +1,14 @@
 name: rust-next
+
 on:
   schedule:
   - cron: '1 1 1 * *'
+
+env:
+  RUST_BACKTRACE: 1
+  CARGO_TERM_COLOR: always
+  CLICOLOR: 1
+
 jobs:
   test:
     name: Test
