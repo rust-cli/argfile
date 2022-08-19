@@ -1,5 +1,8 @@
 name: CI
 
+permissions:
+  contents: read
+
 on:
   pull_request:
     paths:
@@ -25,6 +28,8 @@ env:
 
 jobs:
   ci:
+    permissions:
+      contents: none
     name: CI
     needs: [test, msrv, docs, rustfmt, clippy]
     runs-on: ubuntu-latest

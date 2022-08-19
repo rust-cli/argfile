@@ -1,5 +1,8 @@
 name: rust-next
 
+permissions:
+  contents: read
+
 on:
   schedule:
   - cron: '1 1 1 * *'

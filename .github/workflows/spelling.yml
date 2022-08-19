@@ -1,5 +1,8 @@
 name: Spelling
 
+permissions:
+  contents: read
+
 on: [pull_request]
 
 env:
