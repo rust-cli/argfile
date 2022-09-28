@@ -27,7 +27,7 @@
 //!     argfile::parse_fromfile,
 //!     argfile::PREFIX,
 //! ).unwrap();
-//! let matches = clap::App::new("your_app")
+//! let matches = clap::Command::new("your_app")
 //!     .get_matches_from(args);
 //! ```
 
