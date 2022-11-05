@@ -9,11 +9,8 @@ on:
       - '**/Cargo.toml'
       - '**/Cargo.lock'
   push:
-    paths:
-      - '**/Cargo.toml'
-      - '**/Cargo.lock'
-  schedule:
-  - cron: '1 1 1 * *'
+    branches:
+    - main
 
 env:
   RUST_BACKTRACE: 1
