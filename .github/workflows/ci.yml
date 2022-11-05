@@ -107,6 +107,8 @@ jobs:
   clippy:
     name: clippy
     runs-on: ubuntu-latest
+    permissions:
+      checks: write # to create check (actions-rs/audit-check)
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3

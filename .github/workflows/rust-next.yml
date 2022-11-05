@@ -71,6 +71,8 @@ jobs:
         - stable
     continue-on-error: ${{ matrix.rust != '1.60.0' }}  # MSRV
     runs-on: ubuntu-latest
+    permissions:
+      checks: write # to create check (actions-rs/audit-check)
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3

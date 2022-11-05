@@ -1,7 +1,6 @@
 name: pre-commit
 
-permissions:
-  contents: read
+permissions: {} # none
 
 on:
   pull_request:
@@ -15,6 +14,8 @@ env:
 
 jobs:
   pre-commit:
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
