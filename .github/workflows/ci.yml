@@ -100,7 +100,7 @@ jobs:
     name: clippy
     runs-on: ubuntu-latest
     permissions:
-      checks: write # to create check (actions-rs/audit-check)
+      security-events: write # to upload sarif results
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
@@ -110,7 +110,17 @@ jobs:
         toolchain: 1.60.0  # MSRV
         components: clippy
     - uses: Swatinem/rust-cache@v1
-    - uses: actions-rs/clippy-check@v1
+    - name: Install SARIF tools
+      run: cargo install clippy-sarif sarif-fmt
+    - name: Check
+      run: >
+        cargo clippy --workspace --all-features --all-targets --message-format=json -- -D warnings --allow deprecated
+        | clippy-sarif
+        | tee clippy-results.sarif
+        | sarif-fmt
+      continue-on-error: true
+    - name: Upload
+      uses: github/codeql-action/upload-sarif@v2
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        args: --workspace --all-features --all-targets -- -D warnings --allow deprecated
+        sarif_file: clippy-results.sarif
+        wait-for-processing: true
