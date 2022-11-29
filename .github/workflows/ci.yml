@@ -39,7 +39,7 @@ jobs:
       uses: dtolnay/rust-toolchain@stable
       with:
         toolchain: ${{ matrix.rust }}
-    - uses: Swatinem/rust-cache@v1
+    - uses: Swatinem/rust-cache@v2
     - name: Build
       run: cargo test --no-run --workspace --all-features
     - name: Default features
@@ -58,7 +58,7 @@ jobs:
       uses: dtolnay/rust-toolchain@stable
       with:
         toolchain: 1.60.0  # MSRV
-    - uses: Swatinem/rust-cache@v1
+    - uses: Swatinem/rust-cache@v2
     - name: Default features
       run: cargo check --workspace --all-targets
     - name: All features
@@ -75,7 +75,7 @@ jobs:
       uses: dtolnay/rust-toolchain@stable
       with:
         toolchain: stable
-    - uses: Swatinem/rust-cache@v1
+    - uses: Swatinem/rust-cache@v2
     - name: Check documentation
       env:
         RUSTDOCFLAGS: -D warnings
@@ -93,7 +93,7 @@ jobs:
         # more likely to have stable
         toolchain: stable
         components: rustfmt
-    - uses: Swatinem/rust-cache@v1
+    - uses: Swatinem/rust-cache@v2
     - name: Check formatting
       run: cargo fmt --all -- --check
   clippy:
@@ -109,7 +109,7 @@ jobs:
       with:
         toolchain: 1.60.0  # MSRV
         components: clippy
-    - uses: Swatinem/rust-cache@v1
+    - uses: Swatinem/rust-cache@v2
     - name: Install SARIF tools
       run: cargo install clippy-sarif sarif-fmt
     - name: Check
