@@ -41,5 +41,5 @@ os_str_bytes = "6.0"
 shlex = { version = "1.1.0", optional = true }
 
 [dev-dependencies]
-clap = "4.0.29"
+clap = "4.0.32"
 wild = "2.1"
