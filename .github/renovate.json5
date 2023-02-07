@@ -4,6 +4,7 @@
   ],
   "semanticCommits": "enabled",
   "configMigration": true,
+  "dependencyDashboard": true,
   "packageRules": [
     // Goals:
     // - Keep version reqs low, ignoring compatible normal/build dependencies
