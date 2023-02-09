@@ -76,6 +76,9 @@ rustflags = [
     "-Wnonstandard_style",
     "-Wrust_2018_idioms",
     # END - Embark standard lints v6 for Rust 1.55+
+    "-Wclippy::cargo_common_metadata",
+    "-Wclippy::self_named_module_files",
+    "-Wclippy::wildcard_imports",
     "-Aclippy::branches_sharing_code",
     "-Aclippy::collapsible_else_if",
     "-Aclippy::bool_to_int_with_if",
