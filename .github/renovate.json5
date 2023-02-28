@@ -22,10 +22,15 @@
       "depNameTemplate": "rust",
       "packageNameTemplate": "rust-lang/rust",
       "datasourceTemplate": "github-releases",
-      //"stabilityDays": 126,  // 3 releases * 6 weeks per release * 7 days per week
     }
   ],
   "packageRules": [
+    {
+      "commitMessageTopic": "MSRV",
+      "matchManagers": ["regex"],
+      "matchPackageNames": ["rust"],
+      "stabilityDays": 126,  // 3 releases * 6 weeks per release * 7 days per week
+    },
     // Goals:
     // - Keep version reqs low, ignoring compatible normal/build dependencies
     // - Take advantage of latest dev-dependencies
