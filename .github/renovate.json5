@@ -13,8 +13,8 @@
         "^\.github/workflows/rust-next.yml$",
       ],
       "matchStrings": [
-        "MSRV.*(?<currentValue>\\d+\\.\\d+(\\.\\d+)?)",
-        "(?<currentValue>\\d+\\.\\d+(\\.\\d+)?).*MSRV",
+        "MSRV.*?(?<currentValue>\\d+\\.\\d+(\\.\\d+)?)",
+        "(?<currentValue>\\d+\\.\\d+(\\.\\d+)?).*?MSRV",
       ],
       "depNameTemplate": "rust",
       "packageNameTemplate": "rust-lang/rust",
