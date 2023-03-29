@@ -66,4 +66,3 @@ When we're ready to release, a project owner should do the following
 [issues]: https://github.com/rust-cli/argfile/issues
 [new issue]: https://github.com/rust-cli/argfile/issues/new
 [all issues]: https://github.com/rust-cli/argfile/issues?utf8=%E2%9C%93&q=is%3Aissue
-[travis]: https://github.com/rust-cli/argfile/blob/master/.travis.yml
