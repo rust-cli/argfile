@@ -1,12 +1,8 @@
-[package]
-name = "argfile"
-version = "0.1.5"
-description = "Load additional CLI args from file"
+[workspace]
+resolver = "2"
+
+[workspace.package]
 license = "MIT OR Apache-2.0"
-repository = "https://github.com/rust-cli/argfile.git"
-homepage = "https://github.com/rust-cli/argfile"
-categories = ["command-line-interface"]
-keywords = ["cli", "clap"]
 edition = "2021"
 rust-version = "1.65.0"  # MSRV
 include = [
@@ -18,6 +14,19 @@ include = [
   "benches/**/*",
   "examples/**/*"
 ]
+
+[package]
+name = "argfile"
+version = "0.1.5"
+description = "Load additional CLI args from file"
+repository = "https://github.com/rust-cli/argfile.git"
+homepage = "https://github.com/rust-cli/argfile"
+categories = ["command-line-interface"]
+keywords = ["cli", "clap"]
+license.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+include.workspace = true
 
 [package.metadata.docs.rs]
 all-features = true
