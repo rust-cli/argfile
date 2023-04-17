@@ -1,6 +1,6 @@
 {
   schedule: [
-    'before 3am on the first day of the month'
+    'before 3am on the first day of the month',
   ],
   semanticCommits: 'enabled',
   configMigration: true,
@@ -22,7 +22,7 @@
       depNameTemplate: 'rust',
       packageNameTemplate: 'rust-lang/rust',
       datasourceTemplate: 'github-releases',
-    }
+    },
   ],
   packageRules: [
     {
@@ -33,15 +33,8 @@
       matchPackageNames: [
         'rust',
       ],
-      stabilityDays: "126 days",  // 3 releases * 6 weeks per release * 7 days per week
-      internalChecksFilter: "strict",
+      internalChecksFilter: 'strict',
     },
-    // Goals:
-    // - Keep version reqs low, ignoring compatible normal/build dependencies
-    // - Take advantage of latest dev-dependencies
-    // - Rollup safe upgrades to reduce CI runner load
-    // - Help keep number of versions down by always using latest breaking change
-    // - Have lockfile and manifest in-sync
     {
       matchManagers: [
         'cargo',
