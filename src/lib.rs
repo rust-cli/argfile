@@ -91,7 +91,7 @@ where
         match next {
             Argument::PassThrough(arg) => expanded_args.push(arg),
             Argument::Path(path) => {
-                let content = std::fs::read_to_string(path)?;
+                let content = fs_err::read_to_string(path)?;
                 let new_args = parser(&content, prefix);
                 todo.reserve(new_args.len());
                 for (i, arg) in new_args.into_iter().enumerate() {

@@ -55,6 +55,7 @@ name = "argfile"
 version = "0.1.5"
 dependencies = [
  "clap",
+ "fs-err",
  "os_str_bytes",
  "shlex",
  "wild",
@@ -92,6 +93,12 @@ name = "colorchoice"
 version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "acbf1af155f9b9ef647e42cdc158db4b64a1b61f743629225fde6f3e0be2a7c7"
+
+[[package]]
+name = "fs-err"
+version = "2.9.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0845fa252299212f0389d64ba26f34fa32cfe41588355f21ed507c59a0f64541"
 
 [[package]]
 name = "glob"
