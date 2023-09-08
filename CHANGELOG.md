@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+## [0.1.6] - 2023-09-08
+
 ### Compatibility
 
 - MSRV raised to 1.70.0
@@ -46,7 +48,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 Initial release
 
 <!-- next-url -->
-[Unreleased]: https://github.com/rust-cli/argfile/compare/v0.1.5...HEAD
+[Unreleased]: https://github.com/rust-cli/argfile/compare/v0.1.6...HEAD
+[0.1.6]: https://github.com/rust-cli/argfile/compare/v0.1.5...v0.1.6
 [0.1.5]: https://github.com/rust-cli/argfile/compare/v0.1.4...v0.1.5
 [0.1.4]: https://github.com/rust-cli/argfile/compare/v0.1.3...v0.1.4
 [0.1.3]: https://github.com/rust-cli/argfile/compare/v0.1.2...v0.1.3

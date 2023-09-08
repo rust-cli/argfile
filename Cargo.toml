@@ -18,7 +18,7 @@ include = [
 
 [package]
 name = "argfile"
-version = "0.1.5"
+version = "0.1.6"
 description = "Load additional CLI args from file"
 repository = "https://github.com/rust-cli/argfile.git"
 homepage = "https://github.com/rust-cli/argfile"
