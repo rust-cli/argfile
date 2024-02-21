@@ -14,6 +14,10 @@ env:
   CARGO_TERM_COLOR: always
   CLICOLOR: 1
 
+concurrency:
+  group: "${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: true
+
 jobs:
   ci:
     permissions:
@@ -28,7 +32,7 @@ jobs:
     name: Test
     strategy:
       matrix:
-        os: ["ubuntu-latest", "windows-latest", "macos-latest"]
+        os: ["ubuntu-latest", "windows-latest", "macos-14"]
         rust: ["stable"]
     continue-on-error: ${{ matrix.rust != 'stable' }}
     runs-on: ${{ matrix.os }}
@@ -41,7 +45,7 @@ jobs:
         toolchain: ${{ matrix.rust }}
     - uses: Swatinem/rust-cache@v2
     - name: Build
-      run: cargo test --no-run --workspace --all-features
+      run: cargo test --workspace --no-run
     - name: Default features
       run: cargo test --workspace
     - name: All features
@@ -49,7 +53,7 @@ jobs:
     - name: No-default features
       run: cargo test --workspace --no-default-features
   msrv:
-    name: "Check MSRV: 1.73"
+    name: "Check MSRV"
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
@@ -57,14 +61,15 @@ jobs:
     - name: Install Rust
       uses: dtolnay/rust-toolchain@stable
       with:
-        toolchain: "1.73"  # MSRV
+        toolchain: stable
     - uses: Swatinem/rust-cache@v2
+    - uses: taiki-e/install-action@cargo-hack
     - name: Default features
-      run: cargo check --workspace --all-targets
+      run: cargo hack check --locked --rust-version --ignore-private --workspace --all-targets
     - name: All features
-      run: cargo check --workspace --all-targets --all-features
+      run: cargo hack check --locked --rust-version --ignore-private --workspace --all-targets --all-features
     - name: No-default features
-      run: cargo check --workspace --all-targets --no-default-features
+      run: cargo hack check --locked --rust-version --ignore-private --workspace --all-targets --no-default-features
   lockfile:
     runs-on: ubuntu-latest
     steps:
@@ -119,7 +124,7 @@ jobs:
     - name: Install Rust
       uses: dtolnay/rust-toolchain@stable
       with:
-        toolchain: "1.73"  # MSRV
+        toolchain: "1.76"  # STABLE
         components: clippy
     - uses: Swatinem/rust-cache@v2
     - name: Install SARIF tools
@@ -140,3 +145,22 @@ jobs:
         wait-for-processing: true
     - name: Report status
       run: cargo clippy --workspace --all-features --all-targets -- -D warnings --allow deprecated
+  coverage:
+    name: Coverage
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    - name: Install Rust
+      uses: dtolnay/rust-toolchain@stable
+      with:
+        toolchain: stable
+    - uses: Swatinem/rust-cache@v2
+    - name: Install cargo-tarpaulin
+      run: cargo install cargo-tarpaulin
+    - name: Gather coverage
+      run: cargo tarpaulin --output-dir coverage --out lcov
+    - name: Publish to Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}

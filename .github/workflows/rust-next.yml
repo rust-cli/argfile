@@ -12,12 +12,16 @@ env:
   CARGO_TERM_COLOR: always
   CLICOLOR: 1
 
+concurrency:
+  group: "${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: true
+
 jobs:
   test:
     name: Test
     strategy:
       matrix:
-        os: ["ubuntu-latest", "windows-latest", "macos-latest"]
+        os: ["ubuntu-latest", "windows-latest", "macos-latest", "macos-14"]
         rust: ["stable", "beta"]
         include:
         - os: ubuntu-latest
@@ -32,6 +36,8 @@ jobs:
       with:
         toolchain: ${{ matrix.rust }}
     - uses: Swatinem/rust-cache@v2
+    - name: Build
+      run: cargo test --workspace --no-run
     - name: Default features
       run: cargo test --workspace
     - name: All features
@@ -51,9 +57,11 @@ jobs:
     - uses: Swatinem/rust-cache@v2
     - name: Update dependencues
       run: cargo update
+    - name: Build
+      run: cargo test --workspace --no-run
     - name: Default features
-      run: cargo test --workspace --all-targets
+      run: cargo test --workspace
     - name: All features
-      run: cargo test --workspace --all-targets --all-features
+      run: cargo test --workspace --all-features
     - name: No-default features
-      run: cargo test --workspace --all-targets --no-default-features
+      run: cargo test --workspace --no-default-features
