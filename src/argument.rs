@@ -2,9 +2,12 @@ use std::ffi::{OsStr, OsString};
 use std::path::PathBuf;
 
 /// An individual argument
+#[allow(clippy::exhaustive_enums)]
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub enum Argument {
+    /// Literal argument to use
     PassThrough(OsString),
+    /// File to read more arguments from
     Path(PathBuf),
 }
 

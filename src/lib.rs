@@ -58,7 +58,7 @@ pub const PREFIX: char = '@';
 /// ```
 pub fn expand_args<F>(parser: F, prefix: char) -> Result<Vec<std::ffi::OsString>, std::io::Error>
 where
-    F: Fn(&str, char) -> Vec<crate::Argument>,
+    F: Fn(&str, char) -> Vec<Argument>,
 {
     expand_args_from(std::env::args_os(), parser, prefix)
 }
@@ -80,7 +80,7 @@ pub fn expand_args_from<F>(
     prefix: char,
 ) -> Result<Vec<std::ffi::OsString>, std::io::Error>
 where
-    F: Fn(&str, char) -> Vec<crate::Argument>,
+    F: Fn(&str, char) -> Vec<Argument>,
 {
     use std::collections::VecDeque;
 
