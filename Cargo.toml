@@ -17,7 +17,7 @@ include = [
 ]
 
 [workspace.dependencies]
-fs-err = "2.9.0"
+fs-err = "2.11.0"
 os_str_bytes = "6.0"
 shlex = "1.1.0"
 clap = "4.5.1"
