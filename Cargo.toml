@@ -20,7 +20,7 @@ include = [
 fs-err = "2.9.0"
 os_str_bytes = "6.0"
 shlex = "1.1.0"
-clap = "4.5.1"
+clap = "4.5.4"
 wild = "2.2"
 
 [workspace.lints.rust]
