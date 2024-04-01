@@ -16,13 +16,6 @@ include = [
   "examples/**/*"
 ]
 
-[workspace.dependencies]
-fs-err = "2.9.0"
-os_str_bytes = "6.0"
-shlex = "1.1.0"
-clap = "4.5.1"
-wild = "2.2"
-
 [workspace.lints.rust]
 missing_docs = "warn"
 rust_2018_idioms = "warn"
@@ -129,13 +122,13 @@ default = []
 response = ["shlex"]
 
 [dependencies]
-fs-err.workspace = true
-os_str_bytes.workspace = true
-shlex = { workspace = true, optional = true }
+fs-err = "2.9.0"
+os_str_bytes = "6.0"
+shlex = { version = "1.1.0", optional = true }
 
 [dev-dependencies]
-clap.workspace = true
-wild.workspace = true
+clap = "4.5.1"
+wild = "2.2"
 
 [lints]
 workspace = true
