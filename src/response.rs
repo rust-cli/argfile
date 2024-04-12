@@ -3,8 +3,7 @@
 /// See [Microsoft response files](https://docs.microsoft.com/en-us/cpp/build/reference/at-specify-a-compiler-response-file?view=msvc-170).
 #[cfg(feature = "response")]
 pub fn parse_response(content: &str, _prefix: char) -> Vec<crate::Argument> {
-    shlex::split(content)
-        .unwrap_or_default()
+    winsplit::split(content)
         .into_iter()
         .map(|s| crate::Argument::PassThrough(s.into()))
         .collect()
@@ -38,9 +37,11 @@ c:\Windows
             crate::Argument::PassThrough("@moon.txt".into()),
             crate::Argument::PassThrough("--goodbye".into()),
             crate::Argument::PassThrough("walker texas".into()),
-            crate::Argument::PassThrough("single".into()),
+            crate::Argument::PassThrough("'single'".into()),
             crate::Argument::PassThrough("sun".into()),
-            crate::Argument::PassThrough("c:Windows".into()),
+            crate::Argument::PassThrough("c:\\Windows".into()),
+            crate::Argument::PassThrough("#".into()),
+            crate::Argument::PassThrough("comment".into()),
         ];
         let actual = parse_response(input, crate::PREFIX);
         assert_eq!(expected, actual);
