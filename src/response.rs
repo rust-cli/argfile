@@ -1,5 +1,8 @@
 /// Parse a Microsoft response file
 ///
+/// Quoting is subject to
+/// [`CommandLineToArgvW`](https://learn.microsoft.com/en-us/cpp/c-language/parsing-c-command-line-arguments?view=msvc-170)
+///
 /// See [Microsoft response files](https://docs.microsoft.com/en-us/cpp/build/reference/at-specify-a-compiler-response-file?view=msvc-170).
 #[cfg(feature = "response")]
 pub fn parse_response(content: &str, _prefix: char) -> Vec<crate::Argument> {
