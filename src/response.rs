@@ -27,7 +27,9 @@ mod test {
         let input = "--hello world
 @moon.txt
 --goodbye 'walker texas'
-sun";
+sun
+c:\\Windows
+";
         let expected: Vec<crate::Argument> = vec![
             crate::Argument::PassThrough("--hello".into()),
             crate::Argument::PassThrough("world".into()),
@@ -35,6 +37,7 @@ sun";
             crate::Argument::PassThrough("--goodbye".into()),
             crate::Argument::PassThrough("walker texas".into()),
             crate::Argument::PassThrough("sun".into()),
+            crate::Argument::PassThrough("c:Windows".into()),
         ];
         let actual = parse_response(input, crate::PREFIX);
         assert_eq!(expected, actual);
