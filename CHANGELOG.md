@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+## [0.2.0] - 2024-04-12
+
 ### Compatibility
 
 - Response escaping rules changed
@@ -57,7 +59,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 Initial release
 
 <!-- next-url -->
-[Unreleased]: https://github.com/rust-cli/argfile/compare/v0.1.6...HEAD
+[Unreleased]: https://github.com/rust-cli/argfile/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/rust-cli/argfile/compare/v0.1.6...v0.2.0
 [0.1.6]: https://github.com/rust-cli/argfile/compare/v0.1.5...v0.1.6
 [0.1.5]: https://github.com/rust-cli/argfile/compare/v0.1.4...v0.1.5
 [0.1.4]: https://github.com/rust-cli/argfile/compare/v0.1.3...v0.1.4

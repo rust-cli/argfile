@@ -92,7 +92,7 @@ zero_sized_map_values = "warn"
 
 [package]
 name = "argfile"
-version = "0.1.6"
+version = "0.2.0"
 description = "Load additional CLI args from file"
 repository = "https://github.com/rust-cli/argfile.git"
 homepage = "https://github.com/rust-cli/argfile"
