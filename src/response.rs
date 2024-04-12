@@ -30,6 +30,7 @@ mod test {
 'single'
 sun
 c:\Windows
+# comment
 "#;
         let expected: Vec<crate::Argument> = vec![
             crate::Argument::PassThrough("--hello".into()),
