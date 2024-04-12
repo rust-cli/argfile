@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+### Compatibility
+
+- Response escaping rules changed
+- MSRV raised to 1.74
+
+### Fixes
+
+- Use Windows escaping rules for response files, allowing backslashes to be used
+
 ## [0.1.6] - 2023-09-08
 
 ### Compatibility
