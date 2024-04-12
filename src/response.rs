@@ -24,18 +24,20 @@ mod test {
 
     #[test]
     fn sample() {
-        let input = "--hello world
+        let input = r#"--hello world
 @moon.txt
---goodbye 'walker texas'
+--goodbye "walker texas"
+'single'
 sun
-c:\\Windows
-";
+c:\Windows
+"#;
         let expected: Vec<crate::Argument> = vec![
             crate::Argument::PassThrough("--hello".into()),
             crate::Argument::PassThrough("world".into()),
             crate::Argument::PassThrough("@moon.txt".into()),
             crate::Argument::PassThrough("--goodbye".into()),
             crate::Argument::PassThrough("walker texas".into()),
+            crate::Argument::PassThrough("single".into()),
             crate::Argument::PassThrough("sun".into()),
             crate::Argument::PassThrough("c:Windows".into()),
         ];
