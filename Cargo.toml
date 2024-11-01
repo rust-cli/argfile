@@ -116,7 +116,7 @@ default = []
 response = ["dep:winsplit"]
 
 [dependencies]
-fs-err = "2.9.0"
+fs-err = "3.0.0"
 os_str_bytes = "7.0"
 winsplit = { version = "0.1.0", optional = true }
 
