@@ -35,6 +35,10 @@
 #![warn(clippy::print_stderr)]
 #![warn(clippy::print_stdout)]
 
+#[doc = include_str!("../README.md")]
+#[cfg(doctest)]
+pub struct ReadmeDoctests;
+
 mod argument;
 mod fromfile;
 #[cfg(feature = "response")]
