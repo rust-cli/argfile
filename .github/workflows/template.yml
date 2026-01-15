@@ -43,6 +43,6 @@ jobs:
       env:
         GH_TOKEN: ${{ github.token }}
     - name: Create PR
-      run: "gh pr create -H template-update -t 'chore: Update from template'"
+      run: "gh pr create --head template-update --title 'chore: Update from template' --body ''"
       env:
         GH_TOKEN: ${{ github.token }}
