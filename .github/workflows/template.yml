@@ -47,3 +47,11 @@ jobs:
       run: "gh pr create --head template-update --title 'chore: Update from template' --body ''"
       env:
         GH_TOKEN: ${{ github.token }}
+    - name: Approve PR
+      run: "gh pr review --approve"
+      env:
+        GH_TOKEN: ${{ github.token }}
+    - name: Merge PR
+      run: "gh pr merge --auto --delete-branch"
+      env:
+        GH_TOKEN: ${{ github.token }}
