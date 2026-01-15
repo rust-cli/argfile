@@ -23,6 +23,7 @@ jobs:
   update:
     permissions:
       security-events: write # to create PR
+      pull-requests: write
       contents: write # to push the branch
     runs-on: ubuntu-latest
     steps:
