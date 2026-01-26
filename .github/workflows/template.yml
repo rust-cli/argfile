@@ -25,6 +25,7 @@ jobs:
       security-events: write # to create PR
       pull-requests: write
       contents: write # to push the branch
+      workflows: write # modify workflow files
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
