@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+## [1.0.0] - 2026-02-11
+
 ## [0.2.1] - 2024-07-25
 
 ## [0.2.0] - 2024-04-12
@@ -61,7 +63,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 Initial release
 
 <!-- next-url -->
-[Unreleased]: https://github.com/rust-cli/argfile/compare/v0.2.1...HEAD
+[Unreleased]: https://github.com/rust-cli/argfile/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/rust-cli/argfile/compare/v0.2.1...v1.0.0
 [0.2.1]: https://github.com/rust-cli/argfile/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/rust-cli/argfile/compare/v0.1.6...v0.2.0
 [0.1.6]: https://github.com/rust-cli/argfile/compare/v0.1.5...v0.1.6
