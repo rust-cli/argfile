@@ -2,7 +2,7 @@ use std::ffi::{OsStr, OsString};
 use std::path::PathBuf;
 
 /// An individual argument
-#[allow(clippy::exhaustive_enums)]
+#[allow(clippy::exhaustive_enums, reason = "no plans for expansion")]
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub enum Argument {
     /// Literal argument to use
