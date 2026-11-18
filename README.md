@@ -2,7 +2,7 @@
 
 > Load additional CLI args from file
 
-[![Documentation](https://img.shields.io/badge/docs-master-blue.svg)][Documentation]
+[![Documentation](https://img.shields.io/badge/docs-main-blue.svg)][Documentation]
 ![License](https://img.shields.io/crates/l/argfile.svg)
 [![Crates Status](https://img.shields.io/crates/v/argfile.svg)][Crates.io]
 
